@@ -1,0 +1,254 @@
+//theme color
+$theme__red:#d2513b;
+$theme__darkGray:#282c34;
+$theme__white:#f3f2f0;
+$fontColor:#9fa7ae;
+::selection{
+	color: $theme__darkGray;
+	background: oldlace;
+}
+//------------shadow
+//drawer
+$drawer__shadow: -5px -5px 10px #2f333d, 5px 5px 10px #21252b;
+$drawer__shadow-inset: -7px -7px 6px #2d313a inset, 7px 7px 6px #23272e inset;
+//fridge
+$fresher_shadow: 4px 5px 6px rgba(215, 211, 208, 1), 4px 4px 3px white inset,
+  0px -3px 4px #dadada inset;
+$changer_shadow: 4px 5px 6px rgba(215, 211, 208, 1), 4px 4px 3px white inset,
+  0px -3px 4px #dadada inset;
+$freezer_shadow: 4px 5px 12px rgba(#c7c1bd, 1), 4px 4px 3px white inset,
+  0px -3px 4px #dadada inset;
+  $fridge_doorHandle_shadow: 1px 2px 2px #d2d4d4;
+///nav
+$nav__tabsTrackColor: #ccc;
+$nav__tabsThumbColor: #282c35;
+$nav__fontsize:20px;
+$nav_fontColor: #9fa7ae;
+//Login
+$login_width:1110px;
+$login_height:700px;
+
+$login_label_width:432px;
+$login_label_height:56px;
+
+$login_input_width:432px;
+$login_input_height:56px;
+
+$border_color: #B5B5B6;
+$login_bgcolor:#282C34;
+
+$login_active_boxshadow:-7px -7px 10px 8px rgba($color: #2F343E, $alpha: 1),
+7px 7px 13px 8px rgba($color: #22262D, $alpha: 1),
+5px 5px 13px 0px rgba($color: #23272F, $alpha: 1) inset,
+-5px -5px 13px 0px rgba($color: #2B3039, $alpha: 1) inset;
+
+$login_input_boxshadow:3px 3px 10px rgba($color: #000000, $alpha: .6) inset,
+-3px -3px 10px rgba($color: #FFF, $alpha: .11) inset;
+
+
+
+@import './Flex_mixin.scss';
+@import './in-up.scss';
+
+@mixin dashe {
+	border: 1px dashed #ccc;
+}
+@mixin cursorP{
+	cursor: url('../assets/cursor-pointer.png'),auto;
+}
+* {
+	padding: 0;
+	margin: 0;
+}
+
+body,html{
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+}
+
+ul,
+li {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+img[src = ""], img:not([src]){
+
+	opacity: 0;
+}
+
+
+.container {
+	margin: 0 auto;
+	max-width: 1440px;
+	min-width: 750px;
+	width: 100%;
+	box-sizing: border-box;
+}
+
+
+
+
+
+.fade-enter-active, .fade-leave-active {
+	transition: opacity .5s;
+  }
+.fade-enter, .fade-leave-to  {
+	opacity: 0;
+  }
+
+
+
+
+
+//el   setting
+
+.el-table{
+	color: $theme__darkGray !important;
+}
+.drawer__box__avatar img{
+	width: 100% !important;
+}
+
+
+
+.el-table__body-wrapper::-webkit-scrollbar-track  {
+
+	
+
+	
+	border-radius: 8px;
+
+
+	}
+
+
+.el-table__body-wrapper::-webkit-scrollbar-thumb {
+	display: block;
+	
+
+	
+	border-radius: 8px;
+	background:$theme__darkGray;
+	
+	// box-shadow:  1px 1px 4px #1e2127, 
+	// 			 -1px -1px 4px #323741;
+    }
+    /* 滚动条 */
+    
+.el-table__body-wrapper::-webkit-scrollbar {
+	display: block;
+	border-radius: 8px;
+	width: 12px;
+	background-color: #F3F2F0;
+	box-shadow: inset 3px 3px 2px #e2e1df, 
+	inset -3px -3px 2px #ffffff;
+    }
+.el-table__body-wrapper{
+
+	background-color: #f3f2f0;
+}
+.el-table--enable-row-hover .el-table__body tr:hover>td {
+    background-color:$fontColor !important;
+}
+.el-table .ascending .sort-caret.ascending {
+    border-bottom-color: #d2513b;
+}
+
+.el-table .descending .sort-caret.descending {
+    border-top-color: #d2513b;
+}
+
+.el-table td, .el-table th{
+	text-align: center !important;
+}
+.el-table th, .el-table tr {
+	background-color:#f3f2f0 ;
+	
+}
+.el-table__row{
+	
+	margin-bottom: 20px !important;
+}
+
+
+.el-drawer{
+	
+	border-radius: 20px 0px 0px 20px !important;
+	height: 900px !important;
+	top:calc(50vh - 450px ) !important;
+	background-color: $theme__darkGray;
+	box-shadow:  6px 6px 6px #2F343E !important;
+}
+
+
+
+///edit scss
+
+
+.el-dialog__wrapper{
+	@include flex_R_C_C;
+	backdrop-filter: blur(2px);
+}
+
+.el-dialog{
+	
+width: 760px;
+height: 380px;
+
+border-radius: 30px;
+background-color:$theme__white;
+}
+
+.inline-input{
+	width: 100%;
+	height: 100%;
+}
+.el-input__inner{
+	text-align: center !important;
+}
+.el-select{
+	width: 100%;
+}
+.el-date-editor{
+	width: 100%;
+}
+.el-input-number__increase, .el-input-number__decrease{
+	background-color: $theme__red !important;
+	color: $theme__white !important;
+}
+.el-select-dropdown__item{
+	text-align: center;
+}
+.el-select-dropdown__item.selected {
+	color:$theme__red !important  ;
+}
+.el-input.is-focus .el-input__inner, .el-input__inner:focus{
+	border-color: $theme__red !important;
+}
+.el-date-table td.today span{
+	color:$theme__red !important  ;
+}
+
+.el-date-table td.current:not(.disabled) span{
+	color: $theme__white !important;
+	background-color: $theme__red !important;
+}
+.el-date-table td.available:hover {
+	color:$theme__red !important  ;
+}
+.el-input__inner {
+	border-radius: 10px !important;
+}
+
+.el-radio-button__inner:hover {
+	color: $theme__red !important;
+}
+
+
+
+@import './icon.scss';

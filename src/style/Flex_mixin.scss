@@ -1,0 +1,67 @@
+////row
+
+
+@mixin flex_R_C_C {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+@mixin flex_R_FS_C {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+}
+@mixin flex_R_SA_C {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
+@mixin flex_R_SB_C {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+@mixin flex_R_SE_FE {
+	display: flex;
+	justify-content: space-evenly;
+	align-items: flex-end;
+}
+
+
+
+
+//column
+
+
+@mixin flex_C_C_C{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+@mixin  flex_C_FS_C {
+
+display: flex;
+flex-direction: column;
+justify-content: flex-start;
+align-items: center;
+}
+
+
+@mixin flex_C_SA_C {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+}
+
+@mixin flex_C_SB_C {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+}

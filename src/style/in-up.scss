@@ -1,0 +1,241 @@
+@mixin in-up {
+	
+
+	position: relative;
+
+	max-width: 1100px;
+	min-width: 750px;
+	width: 100%;
+	height: 720px;
+	margin: 0 auto;
+	box-sizing: border-box;
+	@include flex_C_FS_C;
+	border-radius: 30px;
+	transition: all 1.5s ease-in-out;
+
+
+	&__backToHome {
+		width: 64px;
+		height: 64px;
+		position: absolute;
+		left: 16px;
+		top: 16px;
+		font-size: 20px;
+		@include cursorP;
+	}
+
+	&__turn {
+		position: absolute;
+		right: 16px;
+		bottom: 16px;
+		@include cursorP;
+		user-select: none;
+
+		svg {
+			display: inline-block;
+			vertical-align: middle;
+			margin-right: 10px;
+		}
+
+		span {
+			font-size: 24px;
+			color: $theme__red;
+		}
+	}
+
+	&__logo {
+		position: relative;
+		width: 135px;
+		height: 90px;
+		margin-top: 64px;
+		user-select: none;
+
+		&::before {
+			position: absolute;
+			bottom: 0;
+			left: 0px;
+			z-index: 1;
+			border-radius: 50%;
+
+			content: "";
+			width: 90px;
+			height: 90px;
+			background-image: radial-gradient(circle 80px at 26.11% 0.15%,
+					#d2513b 0%,
+					$theme__darkGray 96%,
+					rgba($color: $theme__darkGray, $alpha: 0) 100%);
+
+			color: rgba($color: #000000, $alpha: 1.0);
+		}
+
+		&::after {
+			position: absolute;
+			bottom: 0;
+			left: 45px;
+			z-index: 1;
+			border-radius: 50%;
+			content: "";
+			width: 90px;
+			height: 90px;
+			opacity: 0.8;
+			background-image: radial-gradient(circle 80px at 35.15% 14.76%,
+					#e2e1e0 0%,
+					$theme__darkGray 96%,
+					$theme__darkGray 100%);
+		}
+	}
+
+	&__title {
+		margin-top: 26px;
+		font-size: 56px;
+		font-weight: 200;
+		line-height: 56px;
+		color: $theme__red;
+		user-select: none;
+		// @include dashe;
+		// border: 1px dashed #ccc;
+	}
+
+
+	form {
+		@include flex_C_C_C;
+		// @include dashe;
+		height: 430px;
+		user-select: none;
+		.validateMsg {
+			position: relative;
+			height: 16px;
+			font-size: 16px;
+			color: $theme__red;
+			margin-top: 8px;
+			// &::before{
+			// 	content: "";
+			// 	width: 10px;
+			// 	height: 10px;
+			// 	background-color: $theme__red;
+			// 	border-radius: 50%;
+			// 	position: absolute;
+			// 	right: calc(100% + 5px);
+			// 	top: 50%;
+			// 	transform: translateY(-50%);
+			// }
+			span{
+				display: inline-block;
+				margin-right: 4px;
+				width: 10px;
+				height: 10px;
+				background-color: $theme__red;
+				border-radius: 50%;
+			}
+		}
+		
+	}
+
+	label {
+		width: 432px;
+		@include flex_R_FS_C;
+
+		transition: all .75s ease-in-out;
+		margin: 0px;
+		position: relative;
+		transform-style: preserve-3d;
+
+		svg:nth-child(1) {
+			position: absolute;
+			left: 5%;
+			width: 32px;
+			height: 32px;
+			fill: transparent;
+			transition: all 1s ease-in-out;
+		}
+
+		svg:nth-of-type(2) {
+			position: absolute;
+			right: 5%;
+		}
+
+		input {
+			background-color: transparent;
+			outline: none;
+			width: 100%;
+			height: $login_input_height;
+			border: none;
+			color: $border_color;
+			caret-color: $border_color;
+			// @include border;
+			font-size: 24px;
+			font-weight: 200;
+			border-radius: 13px;
+			box-sizing: border-box;
+
+
+			text-align: center;
+
+		}
+
+	}
+
+	button {
+		outline: none;
+		text-decoration: none;
+		background-color: transparent;
+		width: 128px;
+		height: 48px;
+		border: none;
+		border-radius: 13px;
+		font-size: initial;
+		font-family: initial;
+		color: $border_color;
+		// box-shadow: -6px -6px 8px #2f343e, 6px 6px 8px #22262d;
+		cursor: pointer;
+
+		&:active {
+			transform: scale(1.05);
+			transition: all .1s ease-in-out;
+			box-shadow: -6px -6px 8px #2f343e inset, 6px 6px 8px #22262d inset;
+
+		}
+	}
+
+
+}
+
+
+
+@mixin login-active {
+
+	.login-active {
+		background-color: #282C34;
+		box-shadow: $login_active_boxshadow;
+
+
+		button {
+			box-shadow: -6px -6px 8px #2f343e, 6px 6px 8px #22262d;
+			margin-top: 32px;
+		}
+
+
+		label {
+			border: none !important;
+
+			svg {
+				fill: $border_color !important;
+
+			}
+
+			input {
+				border: 0 !important;
+				box-shadow: $login_input_boxshadow;
+
+			}
+		}
+
+
+
+		@content;
+
+
+
+
+	}
+}
